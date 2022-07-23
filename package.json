@@ -1,0 +1,25 @@
+{
+  "name": "express_js",
+  "version": "1.0.0",
+  "description": "https://adibrasel.github.io/Express_js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdibRasel/Express_js.git"
+  },
+  "keywords": [],
+  "author": "Rasel Hossain Adib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdibRasel/Express_js/issues"
+  },
+  "homepage": "https://github.com/AdibRasel/Express_js#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
