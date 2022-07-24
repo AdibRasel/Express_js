@@ -4,12 +4,27 @@ const port = 2022;
 const portAddress = ("http://localhost:" + port)
 
 app.get('/' , (req , res)=>{
-   res.send('<h1>Home page</h1>')
+
+   res.download("Response_Method/res.json.png")
+   res.end("d")
+
+
 })
 
-app.get('/about' , (req , res)=>{
-    res.send('<h1>About page</h1>')
- })
+
+
+
+
+
+
+
+app.post('/about' , (req , res)=>{
+
+   // res.send('any string')
+
+   // res.end('any string')
+
+})
  
  app.get('/contact' , (req , res)=>{
     res.send('<h1>Contact Page</h1>')
