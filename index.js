@@ -4,13 +4,20 @@ const port = 2022;
 const portAddress = ("http://localhost:" + port)
 
 app.get('/' , (req , res)=>{
+    res.cookie("name", "Rasel Hossain Adib")
+    res.cookie("father", "Harun Or Roshid")
+    res.cookie("mother", "firoza Begum")
+    res.cookie("city", "Noakhali")
+    res.end("Cookie set success")
+   })
 
-   res.download("Response_Method/res.json.png")
-   res.end("d")
+app.get('/about', (req, res)=>{
+
+    res.clearCookie("name");
+    res.end("name cookie er value clear success")
 
 
 })
-
 
 
 

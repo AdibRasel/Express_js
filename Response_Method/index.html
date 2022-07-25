@@ -19,6 +19,25 @@
     height: auto;
     padding-bottom: 10px;
     }
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
     </style>
 
     <title>Response Method</title>
@@ -31,7 +50,7 @@
         <div class="main_box">
 
             <!-- nav  -->
-            <nav class="navbar navbar-expand-lg navbar-light main_menu">
+            <nav id="top" class="navbar navbar-expand-lg navbar-light main_menu">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
                 <!-- <h1><a class="" href="">Node JS</a></h1> -->
                 <a href="../index.html"><img class="img-fluid icon" src="../image/express_js_logo.png" alt=""></a>
@@ -113,8 +132,8 @@
                   <a href="#Download"><li>Response Download</li></a>
                   <a href="#redirect"><li>Response redirect</li></a>
                   <a href="#header"><li>Response header</li></a>
-                  <a href="#Set String"><li>Set String</li></a>
-                  <a href="#Clear String"><li>Clear String</li></a>
+                  <a href="#Set_cookie"><li>Set Cookie</li></a>
+                  <a href="#Clear_cookie"><li>Clear Cookie</li></a>
                 </b>
               </ul>
 
@@ -137,11 +156,32 @@
                 <h3><b>res.json</b> মেথড</h3>
                 <img src="res.json.png" class="img-fluid" alt="">
               </div>
-
+              <hr>
               <div id="Download">
                 <h3><b>res.download</b> মেথড</h3>
                 <img src="res.download.png" class="img-fluid" alt="">
               </div>
+              <hr>
+              <div id="redirect">
+                <h3><b>res.redirect</b> মেথড</h3>
+                <img src="res.redirect.png" class="img-fluid" alt="">
+              </div>
+              <hr>
+              <div id="header">
+                <h3><b>res header</b> মেথডের জন্য <b><u>res.append</u></b> মেথড ব্যাবহার করা হয়।</h3>
+                <img src="res.header.png" class="img-fluid" alt="">
+              </div>
+              <hr>
+              <div id="Set_cookie">
+                <h3><b>set cookie</b> জন্য <b>res.cookie</b> মেথড ব্যাবহারের মাধ্যমে কুকি সেট করা হয়।</h3>
+                <img src="res.cookie.png" class="img-fluid" alt="">
+              </div>
+              <hr>
+              <div id="Clear_cookie">
+                <h3><b>clear cookie</b> এর জন্য <b>res.clearCookie</b> মেথড ব্যাবহার করে কুকি ক্লিয়ার করা হয়।</h3>
+                <img src="clear_cookie.png" class="img-fluid" alt="">
+              </div>
+
                 
 
               
@@ -173,10 +213,12 @@
 
 
 
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        
 
         </div>
         <!-- end main box  -->
-
 
 
 
@@ -256,7 +298,28 @@
 
 
 
-
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+      
 
 
 
