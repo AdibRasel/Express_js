@@ -1,20 +1,15 @@
 const express = require("express");
+const body_parser = require("body-parser")
 app = express();
-const port = 2022;
-const portAddress = ("http://localhost:" + port)
+app.use(body_parser.json)
 
-app.get('/' , (req , res)=>{
-    res.cookie("name", "Rasel Hossain Adib")
-    res.cookie("father", "Harun Or Roshid")
-    res.cookie("mother", "firoza Begum")
-    res.cookie("city", "Noakhali")
-    res.end("Cookie set success")
-   })
+app.post('/' , (req , res)=>{
 
-app.get('/about', (req, res)=>{
+   const userName = req.header("username");
 
-    res.clearCookie("name");
-    res.end("name cookie er value clear success")
+   const password = req.header("password");
+
+   res.send("Your Username is = " + userName + ", Your password is = " + password)
 
 
 })
@@ -22,28 +17,6 @@ app.get('/about', (req, res)=>{
 
 
 
-
-
-
-app.post('/about' , (req , res)=>{
-
-   // res.send('any string')
-
-   // res.end('any string')
-
+app.listen(2000, ()=>{
+   console.log("your Server is Runing Success")
 })
- 
- app.get('/contact' , (req , res)=>{
-    res.send('<h1>Contact Page</h1>')
- })
- 
- app.get('/service' , (req , res)=>{
-    res.send('<h1>Service Page</h1>')
- })
- 
-
-app.listen(port, ()=>{
-    console.log("Server Run Success, Server Address = " + portAddress);
-})
-
-
