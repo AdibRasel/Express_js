@@ -1,22 +1,22 @@
 const express = require("express");
 const body_parser = require("body-parser")
 app = express();
-app.use(body_parser.json)
+
+app.use(body_parser.json())
 
 app.post('/' , (req , res)=>{
 
-   const userName = req.header("username");
+   const jsonData = req.body;
+   const jsonString = JSON.stringify(jsonData)
 
-   const password = req.header("password");
+   const DataJson = jsonData.name;
+   const student_sub = jsonData.sub[2]
 
-   res.send("Your Username is = " + userName + ", Your password is = " + password)
+   res.end(jsonString + DataJson + student_sub)
 
 
 })
-
-
-
-
 app.listen(2000, ()=>{
    console.log("your Server is Runing Success")
 })
+
