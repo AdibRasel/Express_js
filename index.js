@@ -38,13 +38,13 @@ app.use( "/about" , function(req, res, next){
 })
 
 app.get('/' , (req , res)=>{
-   res.send('')
+   res.send('<h1>Home</h1>')
 })
 app.get('/contact' , (req , res)=>{
-   res.send('')
+   res.send('<h1>contact</h1>')
 })
 app.get('/about' , (req , res)=>{
-   res.send('Fine')
+   res.send('</h1>About, Middleware rout</h1>')
 })
 
 app.listen(3000, ()=>{
